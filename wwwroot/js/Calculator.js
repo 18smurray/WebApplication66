@@ -1,19 +1,22 @@
 ﻿//JavaScript for the Grade Calculator
 
 //Identifies submit button
-var submit = document.getElementById("SubmitButton");
+//var submit = document.getElementById("SubmitButton");
 
 //When submit button is clicked, multiply each grade category percent input by the appropriate percent of the final grade
 //and determine the letter grade based on the final percent
 //Uses an alert to display the final percent and letter grade
-submit.addEventListener("click", function () {
+
+//submit.addEventListener("click", function () {
+$("#SubmitButton").click(function () {
 
     //Calculate weighted percent of each grade category
-    var assignment_pct = document.getElementById("assignment").value * 0.5;
-    var group_pct = document.getElementById("group").value * 0.1;
-    var quiz_pct = document.getElementById("quiz").value * 0.1;
-    var exam_pct = document.getElementById("exam").value * 0.2;
-    var intex_pct = document.getElementById("intex").value * 0.1;
+    //Can use the jquery shortcut "$" instead of "document.getElementById"
+    var assignment_pct = $("#assignment").val() * 0.5;
+    var group_pct = $("#group").val() * 0.1;
+    var quiz_pct = $("#quiz").val() * 0.1;
+    var exam_pct = $("#exam").val() * 0.2;
+    var intex_pct = $("#intex").val() * 0.1;
 
     //Calculate final grade by adding all weighted grade category percentages
     var finalgrade = assignment_pct + group_pct + quiz_pct + exam_pct + intex_pct;

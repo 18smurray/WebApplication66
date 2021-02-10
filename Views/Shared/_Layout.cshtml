@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<!--Shannon Murray Section 2 Group 8-->
+<!--This is a basic index page that demonstrates familiarity with the Visual Studio Community environment-->
+
+<html>
+<head>
+    <!--Can use C# viewbag variable as defined in C#-->
+    <title>@ViewBag.Title</title>
+    <!--css
+        All href=/src= need ~/ which indicates root folder of the web app-->
+    <link href="~/css/main.css" rel="stylesheet" />
+
+    <!--Creates icon for the page tab-->
+    <link rel="icon" href="https://tse3.mm.bing.net/th?id=OIP.TVNG0bHozlAgUWcVAbuwUwHaHa&pid=Api&P=0&w=300&h=300" />
+</head>
+<body>
+    <header>
+        <h1>@ViewBag.Head</h1>
+
+        <!--Menu for site navigation-->
+        <menu>
+            <ul>
+                <!--<li><a href="/">Home</a></li>-->
+                <!--Use tag helper; structure links based on names not locations-->
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Home" asp-action="GradeCalc">Grade Calculator</a></li>
+            </ul>
+        </menu>
+    </header>
+
+    <!--Where the body of other pages will go-->
+    @RenderBody()
+
+    <footer>
+        "Nothing Ventured, Nothing Gained"
+    </footer>
+
+    <!--jquery-->
+    <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+    <!--javascript-->
+    <script src="~/js/Calculator.js"></script>
+</body>
+</html>
